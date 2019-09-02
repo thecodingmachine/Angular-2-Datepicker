@@ -572,12 +572,12 @@ export class DatepickerComponent implements OnInit, OnChanges {
    * @return {Array} The input with the invalid days replaced by 0
    */
   filterInvalidDays(calendarDays: Array<number>): Array<number> {
-    let newCalendarDays = [];
+    let newCalendarDays: Array<any> = [];
     calendarDays.forEach((day: number | Date) => {
       if (day === 0 || !this.isDateValid(<Date> day)) {
-        newCalendarDays.push(0)
+        newCalendarDays.push(0);
       } else {
-        newCalendarDays.push(day)
+        newCalendarDays.push(day);
       }
     });
     return newCalendarDays;
